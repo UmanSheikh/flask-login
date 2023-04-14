@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QWE Track Page</title>
+  
+</head>
+<body>
+
+    <div class="overflow-x-auto">
+        <table class="table-auto border-collapse w-full">
+          <thead>
+            <tr class="bg-gray-200">
+              <th class="px-4 py-2 text-left">Route</th>
+              <th class="px-4 py-2 text-left">Status</th>
+              <th class="px-4 py-2 text-left">Delete</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for data in tracks %}
+            <tr>
+              <td class="border px-4 py-2">{{ data.route }}</td>
+              <td class="border px-4 py-2">{{ data.status }}</td>
+              <td class="border px-4 py-2"><a href="/deleteTrack/{{ data.id }}">Delete</a></td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+      
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.1.4/dist/tailwind.min.css">
+<script src="https://cdn.tailwindcss.com"></script>    
+  </body>
+  </html>

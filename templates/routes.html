@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QWE Login Page</title>
+  
+</head>
+<body>
+
+    <div class="overflow-x-auto">
+        <table class="table-auto border-collapse w-full">
+          <thead>
+            <tr class="bg-gray-200">
+              <th class="px-4 py-2 text-left">Route A</th>
+              <th class="px-4 py-2 text-left">Route B</th>
+              <th class="px-4 py-2 text-left">Delete</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for route in routes %}
+            <tr>
+              <td class="border px-4 py-2">{{ route.route1 }}</td>
+              <td class="border px-4 py-2">{{ route.route2 }}</td>
+              <td class="border px-4 py-2"><a href="/deleteRoute/{{ route.id }}">Delete</a></td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+      
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.1.4/dist/tailwind.min.css">
+<script src="https://cdn.tailwindcss.com"></script>    
+  </body>
+  </html>

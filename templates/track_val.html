@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QWE Track Page</title>
+  
+</head>
+<body>
+    <nav class="bg-gray-800">
+        <div class="mx-auto px-4 py-2 max-w-7xl sm:px-6 lg:px-8">
+          <div class="flex justify-between">
+            <div class="flex">
+              <!-- Dropdown -->
+              <div class="relative inline-block text-left">
+                <button class="inline-flex justify-center items-center space-x-2 px-4 py-2 font-medium text-white bg-gray-800 rounded-md hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500" id="dropdown-button" aria-expanded="false" aria-haspopup="true">
+                  <span>Track Team</span>
+                  <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                    <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l2.293-2.293a1 1 0 011.414 0l.707.707a1 1 0 010 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414l.707-.707z" clip-rule="evenodd" />
+                  </svg>
+                </button>
+              
+                <div class="hidden absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg z-10" id="dropdown-menu">
+                  {% for route in routes %}
+                  <a href="/track/{{route.id}}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900">{{ route.route1 }} - {{ route.route2 }} </a>
+                  {% endfor %}
+                </div>
+              </div>
+                <!-- DropDown 2 -->
+                
+              <!-- DropDown End -->
+
+        </div>
+        <div class="hidden md:flex items-center justify-end md:flex-1 lg:w-0">
+            <!-- <a href="#" class="whitespace-nowrap text-base font-medium text-gray-300 hover:text-white px-3 py-2 rounded-md"></a>
+            <a href="#" class="whitespace-nowrap text-base font-medium text-gray-300 hover:text-white px-3 py-2 rounded-md"></a> -->
+            
+          </div>
+        </div>
+        </div>
+    </nav>
+
+    <script>
+        const button = document.querySelector('#dropdown-button')
+        const dropdown = document.querySelector('#dropdown-menu')
+      
+        button.addEventListener('click', () => {
+          dropdown.classList.toggle('hidden')
+        })
+      </script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.1.4/dist/tailwind.min.css">
+  <script src="https://cdn.tailwindcss.com"></script>    
+    </body>
+    </html>
